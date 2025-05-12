@@ -5,6 +5,7 @@ import About from "./components/About";
 import PageNotFound from "./components/PageNotFound";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
+          <Footer/>
         </BrowserRouter>
       </div>
     </>
