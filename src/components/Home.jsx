@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "./footer";
 import { FaGreaterThan } from "react-icons/fa6";
+import image from "../assets/react.svg";
 function Home() {
   return (
     <>
@@ -60,7 +61,7 @@ function Home() {
         </div>
         <div className="col2 flex flex-col justify-center items-center w-full select-none">
           <img
-            src="./images/atom.png"
+            src={image}
             className="animate-spin"
             style={{ animationDuration: "20s" }}
             width={350}
