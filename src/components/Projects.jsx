@@ -64,16 +64,14 @@ function Projects() {
                         <FaFolder className="text-orange-600" />
                       )}
                       frontend
-                    </span>f
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="h-full w-full border-r border-slate-700 bg-[#021e20a8] text-slate-300 select-none">
-          <div className="titlebar border-b border-slate-700 h-7 flex text-slate-400">
-            
-          </div>
+            <div className="titlebar border-b border-slate-700 h-7 flex text-slate-400"></div>
           </div>
         </div>
       </div>
