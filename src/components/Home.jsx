@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "./footer";
 import { FaGreaterThan } from "react-icons/fa6";
 import image from "../assets/react.svg";
 function Home() {
