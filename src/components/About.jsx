@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Footer from "./Footer";
+
 import { IoTerminal } from "react-icons/io5";
 import { FaAngleDown, FaFolderOpen } from "react-icons/fa6";
 import { IoGitBranchOutline } from "react-icons/io5";
@@ -189,7 +189,6 @@ function About() {
         </div>
       </div>
 
-      <Footer />
     </>
   );
 }
