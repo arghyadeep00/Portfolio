@@ -1,28 +1,30 @@
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const form = useRef();
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setStatus('Sending...');
+    setStatus("Sending...");
 
-    emailjs.sendForm(
-      'service_njlqgyo',      // Replace with your service ID
-      'template_4xrrt6n',   // Replace with your template ID
-      form.current,
-      "8oX-i9MFMzRObwAMi"       // Replace with your public key
-    ).then(
-      (result) => {
-        setStatus('Message sent successfully!');
-        form.current.reset();
-      },
-      (error) => {
-        setStatus('Failed to send message. Please try again.');
-      }
-    );
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID, // Replace with your service ID
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID, // Replace with your template ID
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // Replace with your public key
+      )
+      .then(
+        (result) => {
+          setStatus("Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          setStatus("Failed to send message. Please try again.");
+        }
+      );
   };
 
   return (
