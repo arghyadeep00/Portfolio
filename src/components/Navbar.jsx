@@ -4,16 +4,17 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <>
-      <div className="flex justify-between px-8 p-2 border-b border-slate-700 bg-mutedGreenBlue font-firaCode">
-        <div className="flex gap-52">
-          <p className="text-lightGreen">arghya_</p>
-          <div className="flex">
+      <div className="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 md:px-8 py-3 border-b border-slate-700 bg-mutedGreenBlue font-firaCode">
+        {/* Left Section */}
+        <div className="flex flex-col md:flex-row md:items-center w-full md:w-auto gap-4 md:gap-52">
+          <p className="text-lightGreen text-lg md:text-base">arghya_</p>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center">
             <NavLink
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "border-x border-slate-700 px-4 text-white"
-                  : "border-x border-slate-700 px-4 text-slate-400"
+                  ? "px-4 text-white border-x border-slate-700"
+                  : "px-4 text-slate-400 border-x border-slate-700"
               }
             >
               _hello
@@ -31,7 +32,7 @@ function Navbar() {
               className={({ isActive }) =>
                 isActive
                   ? "px-4 text-white border-x-2 border-slate-700"
-                  : "px-4 border-x border-slate-700 text-slate-400"
+                  : "px-4 text-slate-400 border-x border-slate-700"
               }
             >
               _projects
@@ -39,12 +40,13 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="text-lightGreen border-l border-slate-700 px-4">
+        {/* Right Section */}
+        <div className="mt-3 md:mt-0 text-lightGreen border-t md:border-t-0 md:border-l border-slate-700 pt-2 md:pt-0 md:px-4 w-full md:w-auto text-center md:text-left">
           <a href="mailto:arghyadeepshee00@gmail.com">_contact-me</a>
         </div>
       </div>
     </>
   );
 }
-// "px-4 text-slate-400"
+
 export default Navbar;

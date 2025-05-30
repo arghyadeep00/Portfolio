@@ -16,22 +16,23 @@ import Skill from "../personal_info/Skill";
 import Bio from "../personal_info/Bio";
 function About() {
   const [open, setOpen] = useState("block");
+  const [education, setEducation] = useState("hidden");
+  const [skill, setSkill] = useState("block");
+  const [bio, setBio] = useState("hidden");
+  const [content, setContent] = useState("skill");
+
   const folderBtnOnClick = () => {
     open == "block" ? setOpen("hidden") : setOpen("block");
   };
-  const [education, setEducation] = useState("hidden");
   const educationBtnOnClick = () => {
     education == "hidden" ? setEducation("block") : setEducation("hidden");
   };
-  const [skill, setSkill] = useState("block");
   const skillBtnOnClick = () => {
     skill == "hidden" ? setSkill("block") : setSkill("hidden");
   };
-  const [bio, setBio] = useState("hidden");
   const setBioOnClick = () => {
     bio == "hidden" ? setBio("block") : setBio("hidden");
   };
-  const [content, setContent] = useState("skill");
   const handleOnClick = (e) => {
     setContent(e.target.id);
   };
@@ -188,7 +189,6 @@ function About() {
           </div>
         </div>
       </div>
-
     </>
   );
 }
