@@ -42,7 +42,16 @@ function Navbar() {
 
         {/* Right Section */}
         <div className="mt-3 md:mt-0 text-lightGreen border-t md:border-t-0 md:border-l border-slate-700 pt-2 md:pt-0 md:px-4 w-full md:w-auto text-center md:text-left">
-          <a href="mailto:arghyadeepshee00@gmail.com">_contact-me</a>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive
+                ? "px-4 text-white border-x-2 border-slate-700"
+                : "px-4 text-slate-400 border-x border-slate-700"
+            }
+          >
+            _contact-me
+          </NavLink>
         </div>
       </div>
     </>
