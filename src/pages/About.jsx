@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { IoTerminal } from "react-icons/io5";
 import { FaAngleDown, FaFolderOpen } from "react-icons/fa6";
 import { IoGitBranchOutline } from "react-icons/io5";
@@ -36,6 +36,14 @@ function About() {
   const handleOnClick = (e) => {
     setContent(e.target.id);
   };
+
+  const titles = [
+    "college.js",
+    "high_school.js",
+    "my_skill.js",
+    "my_biography.js",
+  ];
+
   return (
     <>
       <div className="h-full bg-mutedGreenBlue font-firaCode">
@@ -76,7 +84,11 @@ function About() {
                     education
                   </span>
                   <span
-                    className={`${education} px-7 py-1 flex items-center gap-2 text-sm font-robotoMono cursor-pointer`}
+                    className={`${education} ${
+                      content === "college" && education === "block"
+                        ? "bg-slate-700 text-white rounded-sm"
+                        : ""
+                    } px-7 py-1 flex items-center gap-2 text-sm font-robotoMono cursor-pointer hover:bg-slate-700 rounded`}
                     onClick={handleOnClick}
                     id="college"
                   >
@@ -84,7 +96,11 @@ function About() {
                     college.js
                   </span>
                   <span
-                    className={`${education} px-7 py-1 flex items-center gap-2 text-sm font-robotoMono cursor-pointer`}
+                    className={`${education} ${
+                      content === "school" && education === "block"
+                        ? "bg-slate-700 text-white rounded-sm"
+                        : ""
+                    } px-7 py-1 flex items-center gap-2 text-sm font-robotoMono cursor-pointer hover:bg-slate-700 rounded`}
                     onClick={handleOnClick}
                     id="school"
                   >
@@ -107,7 +123,11 @@ function About() {
                     skills
                   </span>
                   <span
-                    className={`${skill} px-7 py-2 flex items-center gap-2 text-sm font-robotoMono cursor-pointer`}
+                    className={`${skill} ${
+                      content === "skill" && skill === "block"
+                        ? "bg-slate-700 text-white rounded-sm"
+                        : ""
+                    } px-5 py-1 mt-3 flex items-center gap-2 text-sm font-robotoMono cursor-pointer hover:bg-slate-700 rounded`}
                     onClick={handleOnClick}
                     id="skill"
                   >
@@ -130,7 +150,11 @@ function About() {
                     bio
                   </span>
                   <span
-                    className={`${bio} px-7 py-2 flex items-center gap-2 text-sm font-robotoMono cursor-pointer`}
+                    className={`${bio} ${
+                      content === "bio" && bio === "block"
+                        ? "bg-slate-700 text-white rounded-sm"
+                        : ""
+                    } px-7 py-1 flex items-center gap-2 text-sm font-robotoMono cursor-pointer hover:bg-slate-700 rounded`}
                     onClick={handleOnClick}
                     id="bio"
                   >
@@ -143,34 +167,42 @@ function About() {
           {/* content title bar section  */}
           <div className="h-full w-full border-r border-slate-700 bg-[#021e20a8] select-none">
             <div className="titlebar border-b border-slate-700 h-7 flex text-slate-400">
-              {content == "college" ? (
+              <span className="flex items-center gap-4 border-r border-slate-700 px-5 cursor-pointer text-white">
+                college.js <RxCross2 />
+              </span>
+
+              {/* {content == "college" ? (
                 <span className="flex items-center gap-4 border-r border-slate-700 px-5 cursor-pointer text-white">
                   college.js <RxCross2 />
                 </span>
               ) : (
                 ""
-              )}
-              {content == "school" ? (
+              )} */}
+
+              {/* {content == "school" ? (
                 <span className="flex items-center gap-4 border-r border-slate-700 px-5 cursor-pointer text-white">
                   high_school.js <RxCross2 />
                 </span>
               ) : (
                 ""
-              )}
-              {content == "skill" ? (
+              )} */}
+
+              {/* {content == "skill" ? (
                 <span className="flex items-center gap-4 border-r border-slate-700 px-5 cursor-pointer text-white">
                   my_skills.js <RxCross2 />
                 </span>
               ) : (
                 ""
-              )}
-              {content == "bio" ? (
+              )} */}
+
+              {/* {content == "bio" ? (
                 <span className="flex items-center gap-4 border-r border-slate-700 px-5 cursor-pointer text-white">
                   bio.js <RxCross2 />
                 </span>
               ) : (
                 ""
-              )}
+              )} */}
+
               {/* <span className={`flex items-center gap-4 border-r px-5 cursor-pointer `}>
                 college <RxCross2 />
               </span>
