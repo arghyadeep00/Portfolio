@@ -10,6 +10,12 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        lightGreen: "#00ffab", // adjust to match your About page theme
+      },
+      fontFamily: {
+        firaCode: ["Fira Code", "monospace"],
+      },
+      colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -67,7 +73,6 @@ export default {
         robotoMono: "Roboto Mono",
       },
     },
-   
   },
   plugins: [require("tailwindcss-animate")],
 };
