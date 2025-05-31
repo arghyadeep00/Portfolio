@@ -5,7 +5,7 @@ import image from "../assets/react.svg";
 function Home() {
   return (
     <>
-      <div className="bg-mutedGreenBlue min-h-[86vh] font-firaCode flex flex-col lg:flex-row gap-12 px-6 lg:px-24 py-10">
+      <div className="bg-mutedGreenBlue min-h-full font-firaCode flex flex-col lg:flex-row gap-12 px-6 lg:px-24 py-10">
         {/* Left Column */}
         <div className="lg:w-1/2 w-full flex flex-col justify-center">
           <div>

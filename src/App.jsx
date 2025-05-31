@@ -7,12 +7,13 @@ import Navbar from "./components/Navbar";
 import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
+
 function App() {
   return (
-    <>
-      <div className="flex flex-col h-screen">
-        <BrowserRouter>
-          <Navbar />
+    <div className="flex flex-col h-screen">
+      <BrowserRouter>
+        <Navbar />
+        <div className="flex-grow overflow-auto">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -20,10 +21,10 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
-          <Footer />
-        </BrowserRouter>
-      </div>
-    </>
+        </div>
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
 

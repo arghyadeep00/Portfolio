@@ -11,6 +11,7 @@ import {
   FaFolder,
   FaSchool,
   FaChild,
+  FaBars,
 } from "react-icons/fa6";
 import { IoIosSchool } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
@@ -26,28 +27,24 @@ function About() {
   const [bio, setBio] = useState("block");
   const [content, setContent] = useState("skill");
   const [openTabs, setOpenTabs] = useState(["skill"]);
+  const [sidebarVisible, setSidebarVisible] = useState(true);
 
-  const folderBtnOnClick = () => {
-    setOpen(open === "block" ? "hidden" : "block");
-  };
-
-  const educationBtnOnClick = () => {
+  const folderBtnOnClick = () => setOpen(open === "block" ? "hidden" : "block");
+  const educationBtnOnClick = () =>
     setEducation(education === "hidden" ? "block" : "hidden");
-  };
-
-  const skillBtnOnClick = () => {
+  const skillBtnOnClick = () =>
     setSkill(skill === "hidden" ? "block" : "hidden");
-  };
-
-  const setBioOnClick = () => {
-    setBio(bio === "hidden" ? "block" : "hidden");
-  };
+  const setBioOnClick = () => setBio(bio === "hidden" ? "block" : "hidden");
 
   const handleOnClick = (e) => {
     const id = e.target.id;
     setContent(id);
     if (!openTabs.includes(id)) {
       setOpenTabs((prev) => [...prev, id]);
+    }
+    // Auto hide sidebar on small screens after click
+    if (window.innerWidth < 768) {
+      setSidebarVisible(false);
     }
   };
 
@@ -77,10 +74,22 @@ function About() {
   };
 
   return (
-    <div className="h-full bg-mutedGreenBlue font-firaCode">
+    <div className="h-full bg-mutedGreenBlue font-firaCode overflow-hidden">
       <div className="flex h-full">
+        {/* Sidebar Toggle Button - Mobile */}
+        <button
+          className="md:hidden p-2 text-white absolute top-2 left-2 z-50 bg-darkGreen rounded"
+          onClick={() => setSidebarVisible(!sidebarVisible)}
+        >
+          <FaBars />
+        </button>
+
         {/* Sidebar Left */}
-        <div className="h-full w-1/4 border-r border-slate-700 flex">
+        <div
+          className={`z-40 md:relative fixed top-0 left-0 h-full bg-[#011417] border-r border-slate-700 flex transition-transform duration-300 ${
+            sidebarVisible ? "translate-x-0" : "-translate-x-full"
+          } w-64 md:w-1/4`}
+        >
           {/* Icons column */}
           <div className="h-full w-14 border-r border-slate-700 flex flex-col items-center">
             <div className="mt-10 flex flex-col text-2xl gap-8">
@@ -91,9 +100,9 @@ function About() {
           </div>
 
           {/* Folder structure */}
-          <div className="w-full">
+          <div className="w-full overflow-y-auto">
             <div
-              className="border-b border-slate-700 flex items-center justify-start px-5 text-slate-200 cursor-pointer select-none"
+              className="border-b border-slate-700 flex items-center justify-start px-5 text-slate-200 cursor-pointer select-none mt-2"
               onClick={folderBtnOnClick}
             >
               {open === "block" ? <FaAngleDown /> : <FaAngleRight />}&nbsp;
@@ -191,13 +200,13 @@ function About() {
         </div>
 
         {/* Main Content Area */}
-        <div className="h-full w-full border-r border-slate-700 bg-[#021e20a8] select-none">
+        <div className="flex flex-col h-full w-full bg-[#021e20a8] select-none">
           {/* Top Title Bar */}
-          <div className="titlebar border-b border-slate-700 h-7 flex text-slate-400">
+          <div className="titlebar border-b border-slate-700 h-7 flex text-slate-400 ">
             {openTabs.map((tab) => (
               <span
                 key={tab}
-                className={`flex items-center gap-4 border-r border-slate-700 px-5 cursor-pointer ${
+                className={`flex items-center gap-4 border-r border-slate-700 px-5 cursor-pointer whitespace-nowrap ${
                   content === tab ? "text-white bg-slate-800" : "text-slate-400"
                 }`}
                 onClick={() => setContent(tab)}
@@ -215,10 +224,12 @@ function About() {
           </div>
 
           {/* Content Display */}
-          {content === "college" && <College />}
-          {content === "school" && <School />}
-          {content === "skill" && <Skill />}
-          {content === "bio" && <Bio />}
+          <div className="flex-grow p-4 h-[calc(100vh-1.75rem)]">
+            {content === "college" && <College />}
+            {content === "school" && <School />}
+            {content === "skill" && <Skill />}
+            {content === "bio" && <Bio />}
+          </div>
         </div>
       </div>
     </div>
