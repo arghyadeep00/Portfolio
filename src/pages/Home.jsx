@@ -1,76 +1,114 @@
 import React from "react";
-import { FaGreaterThan } from "react-icons/fa6";
-import image from "../assets/react.svg";
+import profileImg from "/photo.png";
+import {
+  FaReact,
+  FaNodeJs,
+  FaGithub,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+} from "react-icons/fa";
 
-function Home() {
+const techIcons = [
+  { icon: <FaReact className="text-cyan-400" />, name: "React" },
+  { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
+  { icon: <FaGithub className="text-white" />, name: "GitHub" },
+  { icon: <FaHtml5 className="text-orange-500" />, name: "HTML5" },
+  { icon: <FaCss3Alt className="text-blue-500" />, name: "CSS3" },
+  { icon: <FaJs className="text-yellow-400" />, name: "JavaScript" },
+];
+
+const Home = () => {
   return (
-    <>
-      <div className="bg-mutedGreenBlue min-h-full font-firaCode flex flex-col lg:flex-row gap-12 px-6 lg:px-24 py-10">
-        {/* Left Column */}
-        <div className="lg:w-1/2 w-full flex flex-col justify-center">
-          <div>
-            <p className="text-slate-300 text-base sm:text-lg">Hi all. I am</p>
-            <h1 className="text-4xl sm:text-5xl text-slate-200 mt-3">Arghyadep She</h1>
-            <span className="flex items-center text-2xl sm:text-3xl mt-5 text-Blue">
-              <FaGreaterThan /> <p className="mx-2 sm:mx-3">Full-Stack Developer...</p>
-              <p className="animate-bounce">|</p>
-            </span>
-          </div>
+    <section className="min-h-full bg-mutedGreenBlue flex flex-col lg:flex-row items-center justify-between px-6 lg:px-24 py-12 font-firaCode">
+      {/* Left: Intro Text */}
+      <div className="lg:w-1/2 w-full mb-12 lg:mb-0">
+        <p className="text-slate-300 text-lg">Hi all. I am</p>
+        <h1 className="text-4xl sm:text-5xl text-slate-200 mt-3 font-bold">
+          Arghyadep She
+        </h1>
+        <p className="text-2xl sm:text-3xl mt-5 text-Blue flex items-center">
+          <span className="mr-2">&gt;</span> Full-Stack Developer...
+          <span className="animate-bounce ml-2">|</span>
+        </p>
 
-          <div className="mt-6 text-sm sm:text-base">
-            <p className="text-slate-500">// my number</p>
-            <span className="flex flex-wrap">
-              <p className="text-Blue">const</p>&nbsp;
-              <p className="text-lightGreen">telephoneNum</p>&nbsp;
-              <p className="text-white">= +91 8207084203;</p>
+        <div className="mt-6 text-sm sm:text-base text-white space-y-2">
+          <p className="text-slate-500">// Contact Details</p>
+          <p>
+            <span className="text-Blue">const</span>{" "}
+            <span className="text-lightGreen">telephoneNum</span> = +91
+            8207084203;
+          </p>
+          <p>
+            <span className="text-Blue">const</span>{" "}
+            <span className="text-lightGreen">emailId</span> ={" "}
+            <span className="text-Orange">"arghyadeepshee00@gmail.com"</span>;
+          </p>
+          <p>
+            <span className="text-Blue">const</span>{" "}
+            <span className="text-lightGreen">gitHubLink</span> ={" "}
+            <span className="text-Orange">"https://github.com/arghya00"</span>;
+          </p>
+          <p>
+            <span className="text-Blue">const</span>{" "}
+            <span className="text-lightGreen">linkedinPage</span> ={" "}
+            <span className="text-Orange">
+              "https://www.linkedin.com/arghya00"
             </span>
-
-            <p className="text-slate-500 mt-2">// my e-mail id</p>
-            <span className="flex flex-wrap">
-              <p className="text-Blue">const</p>&nbsp;
-              <p className="text-lightGreen">emailId</p>&nbsp;
-              <p className="text-white">=</p>&nbsp;
-              <p className="text-Orange">"arghyadeepshee00@gmail.com";</p>
-            </span>
-
-            <p className="text-slate-500 mt-2">// you can also see it on my Github page</p>
-            <span className="flex flex-wrap">
-              <p className="text-Blue">const</p>&nbsp;
-              <p className="text-lightGreen">gitHubLink</p>&nbsp;
-              <p className="text-white">=</p>&nbsp;
-              <p className="text-Orange">"https://github.com/arghya00";</p>
-            </span>
-
-            <p className="text-slate-500 mt-2">// you can see my post on Linkedin</p>
-            <span className="flex flex-wrap">
-              <p className="text-Blue">const</p>&nbsp;
-              <p className="text-lightGreen">linkedinPage</p>&nbsp;
-              <p className="text-white">=</p>&nbsp;
-              <p className="text-Orange">"https://www.linkedin.com/arghya00";</p>
-            </span>
-
-            <p className="text-slate-500 mt-2">// also follow on X handle</p>
-            <span className="flex flex-wrap">
-              <p className="text-Blue">const</p>&nbsp;
-              <p className="text-lightGreen">xhandle</p>&nbsp;
-              <p className="text-white">=</p>&nbsp;
-              <p className="text-Orange">"https://x.com/arghyadeep00"</p>
-            </span>
-          </div>
+            ;
+          </p>
+          <p>
+            <span className="text-Blue">const</span>{" "}
+            <span className="text-lightGreen">xhandle</span> ={" "}
+            <span className="text-Orange">"https://x.com/arghyadeep00"</span>
+          </p>
         </div>
 
-        {/* Right Column */}
-        <div className="lg:w-1/2 w-full flex justify-center items-center">
+        <a
+          href="/resume.pdf"
+          download
+          className="inline-block mt-6 border border-lightGreen text-lightGreen px-5 py-2 rounded-md font-semibold hover:bg-lightGreen hover:text-black transition"
+        >
+          Download Resume
+        </a>
+      </div>
+
+      {/* Right: Profile Image with Orbiting Icons */}
+      <div className="lg:w-1/2 w-full flex justify-center items-center">
+        <div className="relative w-72 h-72 flex items-center justify-center">
+          {/* Profile Image */}
           <img
-            src={image}
-            className="animate-spin"
-            style={{ animationDuration: "20s" }}
-            width={250}
+            src={profileImg}
+            alt="Profile"
+            className="rounded-full border-4 border-lightGreen shadow-lg w-60 h-60 object-cover z-10"
           />
+
+          {/* Orbiting Tech Icons */}
+          <ul className="absolute inset-0 animate-spin-slow">
+            {techIcons.map((item, index) => {
+              const angle = (360 / techIcons.length) * index;
+              const radius = 190; // increased from 130
+              const x = radius * Math.cos((angle * Math.PI) / 180);
+              const y = radius * Math.sin((angle * Math.PI) / 180);
+
+              return (
+                <li
+                  key={index}
+                  style={{ transform: `translate(${x}px, ${y}px)` }}
+                  className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 transition hover:scale-110"
+                  title={item.name}
+                >
+                  <span className="text-3xl text-white drop-shadow">
+                    {item.icon}
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
-    </>
+    </section>
   );
-}
+};
 
 export default Home;

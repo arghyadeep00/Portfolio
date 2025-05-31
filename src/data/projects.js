@@ -11,24 +11,15 @@ const projects = [
   },
   {
     id: 2,
-    title: "IoT Control Panel",
-    filename: "iot_control.json",
-    screenshot: "../../public/photo.png",
+    title: "Tic-Tac-Toe",
+    filename: "Tic_tac_toe.json",
+    screenshot: "public/tic-tac-to.png",
     liveLink: "https://example.com/iot-control",
-    githubLink: "",
+    githubLink: "https://github.com/arghyadeep00/Tic-Tac-Toe.git",
     description:
-      "An interactive web-based panel to manage and control IoT devices. Built with Node.js and React, enabling seamless communication with connected hardware components.",
+      `Tic Tac Toe (also known as Noughts and Crosses) is a classic two-player strategy game played on a 3x3 grid. One player uses the symbol "X" and the other uses "O". The players take turns marking the spaces in the grid with their symbol. The goal is to be the first to get three of their marks in a row, either horizontally, vertically, or diagonally. If all nine squares are filled and neither player has three in a row, the game ends in a draw. It is made on simple html css anad javaScript`,
   },
-  {
-    id: 3,
-    title: "Student Portal",
-    filename: "student_portal.json",
-    screenshot: "../../public/photo.png",
-    liveLink: "https://example.com/student-portal",
-    githubLink: "",
-    description:
-      "A student management portal with features like course enrollment, assignment tracking, and attendance monitoring. Designed for educational institutions to streamline academic processes.",
-  },
+  
 ];
 
 export default projects;
