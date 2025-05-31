@@ -13,13 +13,12 @@ const projects = [
     id: 2,
     title: "Tic-Tac-Toe",
     filename: "Tic_tac_toe.json",
-    screenshot: "public/tic-tac-to.png",
+    screenshot:
+      "https://github.com/arghyadeep00/Tic-Tac-Toe/assets/86821795/9c5d4287-a11b-4916-a9de-1abf444428b7",
     liveLink: "https://example.com/iot-control",
     githubLink: "https://github.com/arghyadeep00/Tic-Tac-Toe.git",
-    description:
-      `Tic Tac Toe (also known as Noughts and Crosses) is a classic two-player strategy game played on a 3x3 grid. One player uses the symbol "X" and the other uses "O". The players take turns marking the spaces in the grid with their symbol. The goal is to be the first to get three of their marks in a row, either horizontally, vertically, or diagonally. If all nine squares are filled and neither player has three in a row, the game ends in a draw. It is made on simple html css anad javaScript`,
+    description: `Tic Tac Toe (also known as Noughts and Crosses) is a classic two-player strategy game played on a 3x3 grid. One player uses the symbol "X" and the other uses "O". The players take turns marking the spaces in the grid with their symbol. The goal is to be the first to get three of their marks in a row, either horizontally, vertically, or diagonally. If all nine squares are filled and neither player has three in a row, the game ends in a draw. It is made on simple html css anad javaScript`,
   },
-  
 ];
 
 export default projects;
